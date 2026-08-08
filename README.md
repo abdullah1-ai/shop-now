@@ -3,7 +3,7 @@
 A modern and responsive e-commerce web application built with **React** and **Vite**. Shop Now provides a smooth shopping experience with product browsing, advanced filtering, category-based navigation, cart management, secure authentication using Clerk, and a clean, user-friendly interface.
 
 > **Live Demo:** Coming Soon
-> **Repository:** Coming Soon
+> **Repository:** https://github.com/abdullah1-ai/shop-now
 
 ---
 
@@ -212,7 +212,7 @@ https://dummyjson.com/products
 Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/abdullah1-ai/shop-now.git
 ```
 
 Move into the project folder
@@ -307,6 +307,6 @@ While building this project, I improved my understanding of:
 
 Frontend Developer
 
-LinkedIn: Coming Soon
+LinkedIn: [Fahad Abdullah](https://www.linkedin.com/in/fahad-abdullah-8b809a275)
 
-GitHub: Coming Soon
+GitHub: [GitHub](https://github.com/abdullah1-ai)
