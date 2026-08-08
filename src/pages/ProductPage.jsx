@@ -31,7 +31,7 @@ const ProductPage = () => {
 
   return (
     product != null && (
-      <div className="max-w-7xl h-screen mx-auto mb-34 md:mb-8 lg:mb-18">
+      <div className="max-w-7xl h-screen mx-auto mb-60 md:mb-8 lg:mb-18">
         <h2 className="text-lg">
           <span
             className="text-red-500  cursor-pointer"
@@ -54,7 +54,7 @@ const ProductPage = () => {
             src={product?.images[0]}
             alt=""
           />
-          <div className="flex flex-col gap-6 mb-3">
+          <div className="flex flex-col gap-6 mb-3 pr-4">
             <h2 className="text-xl md:text-2xl font-semibold">
               {product.title}
             </h2>
@@ -75,7 +75,7 @@ const ProductPage = () => {
               </button>
             </div>
             <div>
-              <p className="max-w-[480px] text-lg">{product?.description}</p>
+              <p className="max-w-[400px] md:max-w-[480px] text-lg text-justify">{product?.description}</p>
             </div>
             <div className="flex gap-2 items-center ">
               <input

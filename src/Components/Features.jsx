@@ -3,7 +3,7 @@ import { ClockCheck, LockKeyhole, RotateCcw, Truck } from "lucide-react";
 const Features = () => {
   return (
     <div className=" my-9 text-gray-700">
-      <div className="md:mx-auto ml-15 grid grid-cols-2 gap-4  md:flex justify-around font-semibold py-6 ">
+      <div className=" md:mx-auto ml-3 grid grid-cols-2 gap-4  md:flex justify-around font-semibold py-6 ">
         <div className="flex items-center gap-3">
           <Truck size={"2rem"} />
           <div className="flex flex-col ">

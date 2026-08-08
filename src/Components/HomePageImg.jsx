@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const HomePageImg = () => {
   const navigate = useNavigate();
   return (
-    <div className="max-w-7xl mx-auto bg-gray-200 rounded-2xl my-17  ">
+    <div className="max-w-7xl mx-2 md:mx-4 bg-gray-200 rounded-2xl my-17 ">
       <div
         className="relative h-[650px] w-full bg-fixed bg-cover bg-center bg-no-repeat  rounded-2xl"
         style={{ backgroundImage: `url( ${banner})` }}

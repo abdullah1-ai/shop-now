@@ -58,7 +58,7 @@ const Cart = () => {
   return user ? (
     <div>
       <div className="w-fit md:w-full md:mx-auto md:max-w-7xl">
-        <div className="flex flex-wrap gap-2 md:gap-1 mx-2">
+        <div className="flex flex-wrap gap-2 md:gap-1 ml-2">
         {addToCartRed.map((item,index) => {
           return (
             <div
@@ -133,7 +133,7 @@ const Cart = () => {
 
         {/* Rear Section */}
         {addToCartRed?.length > 0 ? (
-          <div className="flex flex-col gap-3 md:flex-row md:gap-5 max-w-6xl  ml-14 md:ml-35  xl:mx-auto my-10 ">
+          <div className="flex flex-col gap-3 md:flex-row md:gap-5 max-w-6xl  ml-2 md:ml-35  xl:mx-auto my-10 ">
             {/*form section  */}
 
             <div className="h-fit bg-gray-200 rounded-2xl  w-[300px] md:w-[40%] px-10 py-6">

@@ -73,7 +73,8 @@ const NavBar = () => {
             <div className="flex justify-center items-center  gap-2 ">
               <RiUserLocationFill color="red" size={"1.5rem"} />
               {location === "Add Location" ? (
-                <p>{location}</p>
+                <p className="hidden md:flex">
+                  {location}</p>
               ) : (
                 <p>
                   {location.city} <br />
@@ -174,7 +175,7 @@ const NavBar = () => {
       </div>
       {/* Open Box for detect Location */}
       {openBox && (
-        <div className=" mx-auto w-[240px] h-[150px] bg-gray-100 rounded-xl absolute top-29 md:left-70 left-45 z-50">
+        <div className=" mx-auto w-[240px] h-[150px] bg-gray-100 rounded-xl absolute top-22 md:top-29 left-8 md:left-70  z-50">
           <div>
             <div className="flex justify-between items-center">
               <p className="text-xl font-semibold text-gray-700 ml-12 mt-6">
