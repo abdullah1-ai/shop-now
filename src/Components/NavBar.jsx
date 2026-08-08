@@ -58,16 +58,16 @@ const NavBar = () => {
     <div className="relative">
       <div className="w-full bg-gray-100 ">
         <div className=" flex justify-between items-center max-w-7xl mx-auto p-4 gap-9 text-lg">
-          <div className="flex gap-4">
+          <div className="flex gap-9">
             <NavLink
               to={"/"}
               className=" flex items-center justify-center cursor-pointer"
             >
-              <img className="w-[80px]" src={Logo} alt="" />
-              <p>Shop Now</p>
+              <img className="w-[60px] md:w-[80px]" src={Logo} alt="" />
+              <p className="text-[17px] md:text-lg">Shop Now</p>
             </NavLink>
 
-            <div className="flex justify-center items-center  gap-2 ">
+            <div className="flex justify-center items-center gap-0.5 md:gap-2 ">
               <div
                 className={`${location === "Add Location" ? "flex" : "hidden"} `}
               >
@@ -76,7 +76,7 @@ const NavBar = () => {
               {location === "Add Location" ? (
                 <p className="hidden md:flex">{location}</p>
               ) : (
-                <p>
+                <p className="text-[17px] md:text-lg">
                   {location.city} <br />
                   {location.country}{" "}
                 </p>
