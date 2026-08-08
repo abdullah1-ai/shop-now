@@ -1,5 +1,5 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./Components/NavBar";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -18,7 +18,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <NavBar />,
     children: [
- 
       { index: true, element: <Home /> },
       { path: "home", element: <Home /> },
       {

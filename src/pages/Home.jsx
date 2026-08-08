@@ -1,9 +1,9 @@
-import {  useEffect } from "react";
-import SimpleSlider from "../components/SliderComponent";
-import Category from "../components/Category";
-import HomePageImg from "../components/HomePageImg";
+import { useEffect } from "react";
+import SimpleSlider from "../Components/SliderComponent";
+import Category from "../Components/Category";
+import HomePageImg from "../Components/HomePageImg";
 import Features from "../Components/Features";
-
+// Updates Name to Capital Case
 const Home = () => {
   useEffect(() => {
     window.scrollTo({
