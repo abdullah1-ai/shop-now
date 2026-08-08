@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import { RiUserLocationFill } from "react-icons/ri";
-import {
-  ChevronsDown,
-  MenuIcon,
-  ShoppingCart,
-  X,
-} from "lucide-react";
+import { ChevronsDown, MenuIcon, ShoppingCart, X } from "lucide-react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import {
@@ -54,7 +49,9 @@ const NavBar = () => {
       let data = await response.json();
       setLocation(data.address);
       setOpenBox((prev) => !prev);
-    } catch (error) {console.log(error)}
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -71,10 +68,13 @@ const NavBar = () => {
             </NavLink>
 
             <div className="flex justify-center items-center  gap-2 ">
-              <RiUserLocationFill color="red" size={"1.5rem"} />
+              <div
+                className={`${location === "Add Location" ? "flex" : "hidden"} `}
+              >
+                <RiUserLocationFill color="red" size={"1.5rem"} />
+              </div>
               {location === "Add Location" ? (
-                <p className="hidden md:flex">
-                  {location}</p>
+                <p className="hidden md:flex">{location}</p>
               ) : (
                 <p>
                   {location.city} <br />
