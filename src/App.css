@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+
+/* carousel arrow  */
+.arrows{
+  height: 40px;
+  width: 40px;
+  margin: 1px;
+}
+
+/* for styling checkboxes  */
+input[type="checkbox"] {
+  accent-color: red; 
+}
+input[type="range"] {
+  accent-color: red; 
+}
+
+/*this is also for styling checkboxes*/
+.apprearance{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#root{
+  overflow: hidden;
+}
+
+.footer-shell {
+  padding-inline: 16px;
+}
+
+@media (min-width: 768px) {
+  .footer-shell {
+    padding-inline: 100px;
+  }
+}
+
+.footer-inner {
+  width: 100%;
+}
+
+.footer-bottom {
+  max-width: 80rem;
+  margin: 0 auto;
+}
