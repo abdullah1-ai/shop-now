@@ -14,11 +14,14 @@ const Home = () => {
   }, []);
   return (
     <div className="overflow-hidden">
+      <div className="mt-20">
+
       <SimpleSlider />
       <Category />
       <HomePageImg />
       <Features />
     </div>
+      </div>
   );
 };
 

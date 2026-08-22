@@ -249,9 +249,9 @@ const Products = () => {
   return (
     <>
       {dataApi.length > 0 ? (
-        <div className="max-w-7xl my-10 mx-auto">
+        <div className="max-w-7xl mx-auto py-25 md:py-40">
           {/*  Mobile Responsive bar */}
-          <div className=" md:hidden max-w-[95%] rounded-xl bg-gray-100 mx-auto my-6 p-3">
+          <div className=" md:hidden max-w-[95%] rounded-xl bg-gray-100 mx-auto my-6 p-3 ">
             <div className="flex items-center justify-between">
               <p className="text-lg font-medium text-gray-800 ">Apply Filter</p>
 
@@ -285,7 +285,7 @@ const Products = () => {
             />
           )}
 
-          <div className="max-w-7xl flex gap-2 ml-[20px] md:ml-[10%] my-7">
+          <div className="max-w-7xl container flex gap-2 px-3 mx-auto">
             {/* filter Products Section */}
             <div
               className={
@@ -371,7 +371,7 @@ const Products = () => {
             >
               {filterData.length > 0 ? (
                 <div
-                  className={`flex flex-wrap gap-2 md:gap-6 m-0  lg:ml-[10%] `}
+                  className={`flex flex-wrap gap-2 md:gap-6 m-0  lg:ml-[10%] flex items-center justify-center`}
                 >
                   {filterData
                     .slice(4 * dynamicPageNumber - 4, 4 * dynamicPageNumber)
@@ -379,7 +379,7 @@ const Products = () => {
                       return (
                         <div
                           key={i}
-                          className="bg-white rounded-xl min-h-[370px] w-[165px] border border-gray-200 overflow-hidden flex flex-col justify-between pb-3"
+                          className="bg-white rounded-xl min-h-[360px] w-[150px] md:w-[165px] border border-gray-200 overflow-hidden flex flex-col justify-between pb-3"
                         >
                           <img
                             onClick={() =>

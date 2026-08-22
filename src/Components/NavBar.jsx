@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { RiUserLocationFill } from "react-icons/ri";
 import { ChevronsDown, MenuIcon, ShoppingCart, X } from "lucide-react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
@@ -12,26 +12,11 @@ import {
 } from "@clerk/react";
 import MobileResponsiveMenu from "./MobileResponsiveMenu";
 import Footer from "./Footer";
-
-async function ExactLonLattValue() {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        resolve({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
-      },
-      (error) => {
-        reject(error.message);
-      },
-    );
-  });
-}
+import { DetectLocationContext } from "../Context/LocationDetectContext";
 
 const NavBar = () => {
-  const [location, setLocation] = useState("Add Location");
-  const [openBox, setOpenBox] = useState(false);
+  const { location, getLocation, ExactLonLattValue, setOpenBox, openBox } =
+    useContext(DetectLocationContext);
   const [openMenu, setOpenMenu] = useState(false);
   useEffect(() => {
     window.scrollTo({
@@ -41,22 +26,10 @@ const NavBar = () => {
     });
   }, []);
   const navigate = useNavigate();
-  async function getLocation({ longitude, latitude }) {
-    try {
-      let response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
-      );
-      let data = await response.json();
-      setLocation(data.address);
-      setOpenBox((prev) => !prev);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   return (
     <div className="relative">
-      <div className="w-full bg-gray-100 ">
+      <div className="w-full bg-gray-100 fixed z-50">
         <div className=" flex justify-between items-center max-w-7xl mx-auto p-4 gap-9 text-lg">
           <div className="flex gap-9">
             <NavLink
@@ -175,7 +148,7 @@ const NavBar = () => {
       </div>
       {/* Open Box for detect Location */}
       {openBox && (
-        <div className=" mx-auto w-[240px] h-[150px] bg-gray-100 rounded-xl absolute top-22 md:top-29 left-8 md:left-70  z-50">
+        <div className=" mx-auto w-[240px] h-[150px] bg-gray-100 rounded-xl fixed top-22 md:top-29 left-8 md:left-70  z-50">
           <div>
             <div className="flex justify-between items-center">
               <p className="text-xl font-semibold text-gray-700 ml-12 mt-6">
@@ -194,6 +167,7 @@ const NavBar = () => {
                 onClick={async () => {
                   let lonLat = await ExactLonLattValue();
                   await getLocation(lonLat);
+                     setOpenBox(false);
                 }}
               >
                 Detect Location

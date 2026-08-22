@@ -53,12 +53,22 @@ function AddToCartContextProvider({ children }) {
 
       return filterRemoveItem;
     }
+
+    else if (action.type === "EditQuantity") {
+      const arrCart = [...state];
+      const findObj = { ...arrCart[action.payload.foundIndex] };
+      findObj.quantity = Number(action.payload.quantity);
+      arrCart[action.payload.foundIndex] = findObj;
+      localStorage.setItem("cartItems", JSON.stringify(arrCart));
+
+      return arrCart;
+    }
   }
 
   const initialCart = JSON.parse(localStorage.getItem("cartItems")) || [];
   const [addToCartRed, dispatch] = useReducer(Reducer, initialCart);
 
-  function isAlreadyExists(itemExits, sign = "") {
+  function isAlreadyExists(itemExits, sign = "", quantity) {
     const found = addToCartRed.find((item) => {
       return item.id === itemExits.id;
     });
@@ -80,6 +90,12 @@ function AddToCartContextProvider({ children }) {
     } else if (found && sign == "remove") {
       dispatch({ type: "RemoveCart", payload: { found, foundIndex } });
       toast("Item Remove From Cart");
+    } else if (found && sign == "editQuantity") {
+      dispatch({
+        type: "EditQuantity",
+        payload: { found, foundIndex, quantity },
+      });
+      toast("Item Quantity Updated");
     } else {
       let obj = { ...itemExits, quantity: 1 };
       dispatch({ type: "AddToCart", payload: obj });

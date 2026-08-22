@@ -1,23 +1,21 @@
 import { useEffect } from "react";
 const Contact = () => {
-
-    useEffect(() => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    }, []);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
-      <div className="h-screen bg-gradient-to-r bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e]">
-        <div className=" flex justify-center items-center h-full max-w-6xl  mx-auto">
-
-          <div className="bg-white/10 backdrop-blur-md rounded-xl w-full border-white/20 border-2 px-10">
+      <div className="min-h-screen bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] pt-38 pb-10">
+        <div className="flex justify-center items-start h-full max-w-6xl container px-3 mx-auto">
+          <div className="bg-white/10 backdrop-blur-md rounded-xl w-full border-white/20 border-2 px-10 py-8">
             <h2 className="text-center p-8 text-3xl font-semibold text-white">
               Get in touch with us
             </h2>
-            <div className="grid grid[1fr_1fr] md:grid-cols-2 place-content-around">
+            <div className="grid gap-8 md:grid-cols-2 place-content-around">
               {/* 1st details section */}
 
               <div className="w-full">
@@ -25,7 +23,7 @@ const Contact = () => {
                   <h2 className="text-2xl font-semibold text-white">
                     Contact Info
                   </h2>
-                  <p className="text-gray-300 line-clamp-2">
+                  <p className="text-gray-300">
                     Have a question or need support? We're here to help you
                     <br /> with your electronics journey.
                   </p>
@@ -46,22 +44,33 @@ const Contact = () => {
                 </div>
               </div>
               {/* 2nd contact form section */}
-   
+
               <div className=" text-white flex flex-col gap-4 mb-5">
-                <div >
+                <div>
                   <p>Your Name:</p>
-                  <input className=" text-white bg-white/10 backdrop-blur-md rounded-md p-2 w-full" type="text" />
+                  <input
+                    className=" text-white bg-white/10 backdrop-blur-md rounded-md p-2 w-full"
+                    type="text"
+                  />
                 </div>
                 <div>
                   <p>Email Address:</p>
-                  <input  className=" text-white bg-white/10 backdrop-blur-md rounded-md p-2 w-full"  type="text" />
+                  <input
+                    className=" text-white bg-white/10 backdrop-blur-md rounded-md p-2 w-full"
+                    type="text"
+                  />
                 </div>
                 <div>
                   <p>Your Message:</p>
-                  <input  className=" text-white bg-white/10 backdrop-blur-md rounded-md p-2 w-full"  type="text" />
+                  <input
+                    className=" text-white bg-white/10 backdrop-blur-md rounded-md p-2 w-full"
+                    type="text"
+                  />
                 </div>
 
-                <button className=" text-white px-2 py-1 text-lg bg-gradient-to-r from-red-500 to-purple-500 rounded-lg font-medium">Send Message 🚀</button>
+                <button className=" text-white px-2 py-1 text-lg bg-gradient-to-r from-red-500 to-purple-500 rounded-lg font-medium">
+                  Send Message 🚀
+                </button>
               </div>
             </div>
           </div>

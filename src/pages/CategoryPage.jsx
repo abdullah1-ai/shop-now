@@ -43,7 +43,8 @@ const CategoryPage = () => {
   }, [category]);
 
   return (
-    <div className="max-w-7xl mx-auto ">
+    <div className="">
+    <div className="max-w-7xl mx-auto px-4 container py-30">
       <div className="flex flex-col gap-10 my-7">
         <button
           className="self-start text-white text-xl bg-black/90 px-2 py-1 rounded-md flex items-center gap-2"
@@ -104,6 +105,7 @@ const CategoryPage = () => {
           );
         })}
       </div>
+    </div>
     </div>
   );
 };

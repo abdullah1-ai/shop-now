@@ -10,8 +10,10 @@ const About = () => {
     });
   }, []);
   return (
-    <>
-      <div className=" my-10 max-w-5xl mx-auto  rounded-2xl h-content flex flex-col   gap-6 py-10 px-7 shadow-2xl shadow-gray-500 ">
+    <div className="">
+      <div className="px-2 max-w-5xl mx-auto container py-30 md:py-40">
+
+      <div className="   rounded-2xl h-content flex flex-col   gap-6 py-10 px-4 shadow-2xl shadow-gray-500 ">
         <h2 className="text-3xl text-gray-800 font-semibold text-center">
           About{" "}
           <div className="inline text-red-600 font-bold">Shop Now</div>
@@ -70,7 +72,8 @@ const About = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
+    </div>
   );
 };
 

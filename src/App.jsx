@@ -12,6 +12,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Global styles
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
+import { LocationFunProvider } from "./Context/LocationDetectContext";
+
 
 const router = createBrowserRouter([
   {
@@ -50,23 +52,25 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <AddToCartContextProvider>
-      <ApiDataContextProvider>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-        <RouterProvider router={router} />
-      </ApiDataContextProvider>
-    </AddToCartContextProvider>
+    <LocationFunProvider>
+      <AddToCartContextProvider>
+        <ApiDataContextProvider>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+          <RouterProvider router={router} />
+        </ApiDataContextProvider>
+      </AddToCartContextProvider>
+    </LocationFunProvider>
   );
 }
 
