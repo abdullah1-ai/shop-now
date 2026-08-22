@@ -42,7 +42,6 @@ function AddToCartContextProvider({ children }) {
       }
     } else if (action.type === "RemoveCart") {
       const arrCart = [...state];
-      const findObj = { ...arrCart[action.payload.foundIndex] };
       let filterRemoveItem = arrCart.filter((item, i) => {
         return i !== action.payload.foundIndex;
       });

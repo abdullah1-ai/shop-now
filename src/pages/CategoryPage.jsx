@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { dataContext } from "../Context/ApiDataContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
 import { AddToCartContext } from "../Context/AddToCartContext";

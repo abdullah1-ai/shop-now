@@ -63,11 +63,15 @@ const {  user } = useUser()
   const { getLocation, ExactLonLattValue, setOpenBox, location } = useContext(
     DetectLocationContext,
   );
+
+  function FilterZeroQuantityItems(CartArr) {
+   return CartArr.filter((item)=>item.quantity >= 1)
+  }
   return user ? (
     <div>
       <div className="w-fit md:w-full md:mx-auto md:max-w-7xl container px-2 mx-auto py-40">
         <div className="flex flex-wrap gap-2 md:gap-1 justify-center items-center">
-          {addToCartRed.map((item, index) => {
+          { FilterZeroQuantityItems(addToCartRed).map((item, index) => {
             return (
               <div
                 key={index}

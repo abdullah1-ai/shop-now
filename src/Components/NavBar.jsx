@@ -8,7 +8,6 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
-  useUser,
 } from "@clerk/react";
 import MobileResponsiveMenu from "./MobileResponsiveMenu";
 import Footer from "./Footer";

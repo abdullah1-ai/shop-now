@@ -13,7 +13,6 @@ export const LocationFunProvider = ({ children }) => {
     );
     let data = await response.json();
     setLocation(data.address);
-    setLocationObj(data)
     setOpenBox((prev) => !prev);
   } catch (error) {
     console.log(error);
